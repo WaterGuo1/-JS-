@@ -1,0 +1,66 @@
+1.声明对象的两种语法
+```
+let obj = { 'name': 'ashui', 'age': '18' }
+```
+```
+let obj = new Object({ 'name': 'frank' 'age': 18 })
+```
+注意：键名是字符串，不是标识符，可以包含任意字符
+      引号可以省略，省略之后可以写标识符
+      就算引号省略了，键名也还是字符串。
+      Object.keys(obj)可以得到obj的所有key
+      
+2.如何删除对象的属性
+delete obj.xxx或delete obj['xxx']  //即可删除obj的xxx属性
+
+
+3.如何查看对象的属性：
+Object.keys(obj)  //可查看自身所有属性
+console.dir(obj)  //可查看自身+共有属性
+Object.keys       //打印出object__proto__
+obj.hasOwnPerty('toString')  //判断一个属性是自身的还是共有的
+两种语法：
+```
+obj['key']
+obj.key
+```
+obj.name等价于obj['name']
+赋值后：let name ='ashui'
+        obj[name]等价于obj['ashui']
+
+4.如何修改或增加对象的属性：
+直接赋值：
+let obj = {name: 'frank'}  // name是字符串  
+obj.name = 'frank'         // name是字符串 
+obj['na'+'me'] = 'frank'
+批量赋值：
+```
+Object.assign(obj, {age: 18, gender: 'man' })
+```
+无法通过自身修改或增加共有属性
+尽量不要修改原型
+
+
+5.'name' in obj和obj.hasOwnProperty('name') 的区别
+   'name' in obj：只删除了属性值
+   obj.hasOwnProperty('name')：属性名和属性值一起删除了
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
